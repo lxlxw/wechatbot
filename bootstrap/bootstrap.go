@@ -4,7 +4,7 @@ import (
 	"log"
 
 	"github.com/eatmoreapple/openwechat"
-	"github.com/poorjobless/wechatbot/handlers"
+	"github.com/lxlxw/wechatbot/handlers"
 )
 
 func Run() {

@@ -4,7 +4,7 @@ import (
 	"log"
 
 	"github.com/eatmoreapple/openwechat"
-	"github.com/poorjobless/wechatbot/config"
+	"github.com/lxlxw/wechatbot/config"
 )
 
 // MessageHandlerInterface 消息处理接口

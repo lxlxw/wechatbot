@@ -5,7 +5,7 @@ import (
 	"strings"
 
 	"github.com/eatmoreapple/openwechat"
-	"github.com/poorjobless/wechatbot/chatgpt"
+	"github.com/lxlxw/wechatbot/chatgpt"
 )
 
 var _ MessageHandlerInterface = (*UserMessageHandler)(nil)

@@ -1,7 +1,7 @@
 package chatgpt
 
 import (
-	"github.com/poorjobless/wechatbot/config"
+	"github.com/lxlxw/wechatbot/config"
 )
 
 func Completions(msg string) (string, error) {

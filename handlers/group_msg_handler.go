@@ -5,7 +5,7 @@ import (
 	"strings"
 
 	"github.com/eatmoreapple/openwechat"
-	"github.com/poorjobless/wechatbot/chatgpt"
+	"github.com/lxlxw/wechatbot/chatgpt"
 )
 
 var _ MessageHandlerInterface = (*GroupMessageHandler)(nil)
@@ -40,7 +40,7 @@ func (g *GroupMessageHandler) ReplyText(msg *openwechat.Message) error {
 	}
 
 	// 替换掉@文本，然后向GPT发起请求
-	replaceText := "@" + sender.Self.NickName
+	replaceText := "@" + sender.Self().NickName
 	requestText := strings.TrimSpace(strings.ReplaceAll(msg.Content, replaceText, ""))
 	reply, err := chatgpt.Completions(requestText)
 	if err != nil {
@@ -62,7 +62,7 @@ func (g *GroupMessageHandler) ReplyText(msg *openwechat.Message) error {
 	// 回复@我的用户
 	reply = strings.TrimSpace(reply)
 	reply = strings.Trim(reply, "\n")
-	atText := "@" + groupSender.NickName
+	atText := "@" + groupSender.NickName + "\n"
 	replyText := atText + reply
 	_, err = msg.ReplyText(replyText)
 	if err != nil {
